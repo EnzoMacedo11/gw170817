@@ -1,48 +1,63 @@
-import styled from "styled-components"
-import Header from "../../components/header"
-import Globe from "react-globe.gl"
-import { useState } from "react";
-import labelsData from "../../components/labels";
+import styled from "styled-components";
+import Header from "../../components/header";
+import Globe from "react-globe.gl";
 
 
-export default function Home(){
+import labelsData from "../../components/labels/index";
 
-const windowHeight = (window.innerHeight*0.8);
-const windowWidth = (window.innerWidth*0.95);
-        
-console.log(windowHeight)
-console.log(windowWidth)
-    return(<>
-    
-    <Header/> 
-     <Container>
-       <Globe
-    labelsData={labelsData}
-    showGraticules={true}
-    labelSize={.001}
-    labelDotRadius={(labelsData)=>(labelsData.size)}
-    width={windowWidth}
-    height={windowHeight}
-    backgroundColor="grey"
-    labelColor={() => 'red'}
-    labelResolution={2}
-    labelLabel={(labelsData)=>(` ${labelsData.text} <br/> ${labelsData.lat} , ${labelsData.lng}` )}
-    /> 
+export default function Home() {
+  const windowHeight = window.innerHeight * 0.92;
+  const windowWidth = window.innerWidth;
 
-     
-        </Container>
-        </>
-       
-    )
+  console.log(windowHeight);
+  console.log(windowWidth);
+  return (
+    <Container>
+      <Header />
+      <GlobeContainer>
+        <Globe
+        waitForGlobeReady={true}
+          showGlobe={true}
+          animateIn={true}
+          globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
+          backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+          labelsData={labelsData}
+          showGraticules={true}
+          labelSize={0.0001}
+          onGlobeClick={(labelsData) =>
+            ` EventID: ${labelsData.text} <br/> PS: ${labelsData.PS} <br/> Lat: ${labelsData.lat} / Lng: ${labelsData.lng} <br/> area(90): ${labelsData.area90}`
+          }
+          labelDotRadius={1}
+          width={windowWidth}
+          height={windowHeight}
+          labelColor={() => "#FF1F1F"}
+          labelResolution={1}
+          labelLabel={(labelsData) =>
+            ` EventID: ${labelsData.text} <br/> PS: ${labelsData.PS} <br/> Lat: ${labelsData.lat} / Lng: ${labelsData.lng} <br/> area(90): ${labelsData.area90}`
+          }
+        />
+      </GlobeContainer>
+    </Container>
+  );
 }
 
 const Container = styled.div`
-  display:flex;
-  align-items:center;
-  justify-content:center;
-    width:100%;
-    height:92vh;
-    background-color:grey;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-image: "//unpkg.com/three-globe/example/img/night-sky.png";
+  background-color: black;
+`;
 
-
+const GlobeContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 92vh;
+  background-image:"//unpkg.com/three-globe/example/img/night-sky.png"
+  background-color: black;
+`;

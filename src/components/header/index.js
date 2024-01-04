@@ -17,10 +17,10 @@ export default function Header(){
 
     return(<>
      <Container>
-        <Sidebar visible={visible} />
-        <IoMenu onClick={SidebarToogle} style={{marginLeft:20}} size={26}/>
+        
+        
             gw17087
-            <IoLogOutOutline style={{marginRight:20}}size={26}/>
+           
         </Container>
         </>
        
@@ -31,7 +31,7 @@ const Container = styled.div`
     display:flex;
     z-index:2;
     top:0;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
     width:100%;
     height:8vh;

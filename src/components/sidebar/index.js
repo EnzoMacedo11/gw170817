@@ -37,7 +37,7 @@ const Container = styled.div`
   width: 30%;
   margin-top: 8vh;
   height: 80%;
-  background-color: #3c3c3c;
+  background-color: #141414;
   border-bottom-right-radius: 20px;
   transition: transform 0.6s ease; /* Adiciona a animação de transição */
   transform: translateX(${(props) => (props.visible ? "0" : "-100%")});
@@ -47,7 +47,7 @@ const Box = styled.div`
   display: flex;
   flex-direction: column;
   width: 80%;
-  background-color: #515151;
+  background-color: #292929;
   margin-top:15px;
   border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
