@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Header from "../../components/header";
 import Globe from "react-globe.gl";
 
-
 import labelsData from "../../components/labels/index";
 
 export default function Home() {
@@ -16,7 +15,7 @@ export default function Home() {
       <Header />
       <GlobeContainer>
         <Globe
-        waitForGlobeReady={true}
+          waitForGlobeReady={true}
           showGlobe={true}
           animateIn={true}
           globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"

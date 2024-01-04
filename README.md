@@ -1,4 +1,4 @@
-# Projeto GW17087
+# Projeto GW170817
 
 Este repositório contém informações públicas sobre alertas de ondas gravitacionais emitidos em tempo real pela rede de detectores de ondas gravitacionais LIGO/Virgo/KAGRA (LVK) em sua quarta rodada de observações (O4).
 
